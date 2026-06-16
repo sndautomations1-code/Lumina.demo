@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #faf8f3;
+    color: #3d3529;
+  }
+
+  ::selection {
+    background-color: #f2d9b4;
+    color: #3d3529;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #faf8f3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #d4bf8c;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c4a96e;
+  }
+}
+
+@layer components {
+  .gold-border {
+    border: 1px solid #e9bf86;
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, #d4bf8c, #e9bf86, #dfa256);
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, #c4a96e, #dfa256, #e9bf86);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .luxury-shadow {
+    box-shadow: 0 4px 30px rgba(212, 191, 140, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .glass-effect {
+    background: rgba(254, 252, 247, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28;
+  }
+
+  .heading-lg {
+    @apply font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light tracking-wide;
+  }
+
+  .heading-md {
+    @apply font-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-wide;
+  }
+
+  .heading-sm {
+    @apply font-serif text-2xl sm:text-3xl font-light tracking-wide;
+  }
+
+  .body-text {
+    @apply font-sans text-base sm:text-lg font-light leading-relaxed text-stone-600;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
