@@ -117,12 +117,6 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.info.hours.saturday': 'Saturday: 10:00 – 16:00',
     'contact.info.hours.sunday': 'Sunday: Closed',
 
-    // Promo
-    'promo.title': 'Welcome to Lumina',
-    'promo.text': 'Enjoy 10% off your first premium treatment',
-    'promo.code': 'Code: LUMINA10',
-    'promo.close': 'Dismiss',
-
     // Footer
     'footer.rights': 'All rights reserved.',
     'footer.privacy': 'Privacy Policy',
@@ -238,12 +232,6 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.info.hours.weekdays': 'Luni – Vineri: 9:00 – 19:00',
     'contact.info.hours.saturday': 'Sâmbătă: 10:00 – 16:00',
     'contact.info.hours.sunday': 'Duminică: Închis',
-
-    // Promo
-    'promo.title': 'Bun venit la Lumina',
-    'promo.text': 'Beneficiază de 10% reducere la primul tău tratament premium',
-    'promo.code': 'Cod: LUMINA10',
-    'promo.close': 'Închide',
 
     // Footer
     'footer.rights': 'Toate drepturile rezervate.',

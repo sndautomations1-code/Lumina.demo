@@ -39,7 +39,6 @@ export default {
         'fade-in': 'fadeIn 0.8s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
         'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
-        'scale-in': 'scaleIn 0.6s ease-out forwards',
         'slide-in-right': 'slideInRight 0.6s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',
         'shimmer': 'shimmer 2s linear infinite',
@@ -56,10 +55,6 @@ export default {
         fadeInDown: {
           '0%': { opacity: '0', transform: 'translateY(-20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
         },
         slideInRight: {
           '0%': { opacity: '0', transform: 'translateX(30px)' },
