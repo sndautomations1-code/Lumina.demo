@@ -81,15 +81,21 @@ function ComparisonSlider({ beforeImg, afterImg, beforeLabel, afterLabel, label 
 const cases = ['case1', 'case2', 'case3'] as const;
 
 const beforeImages: Record<string, string> = {
-  case1: 'https://images.pexels.com/photos/4040542/pexels-photo-4040542.jpeg?auto=compress&cs=tinysrgb&w=800&q=80',
-  case2: 'https://images.pexels.com/photos/4040552/pexels-photo-4040552.jpeg?auto=compress&cs=tinysrgb&w=800&q=80',
-  case3: 'https://images.pexels.com/photos/4040562/pexels-photo-4040562.jpeg?auto=compress&cs=tinysrgb&w=800&q=80',
+  // Skin Rejuvenation — glowing skin close-up portrait
+  case1: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80',
+  // Laser Resurfacing — professional spa facial treatment
+  case2: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80',
+  // Facial Contouring — elegant facial profile
+  case3: 'https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?auto=format&fit=crop&w=800&q=80',
 };
 
 const afterImages: Record<string, string> = {
-  case1: 'https://images.pexels.com/photos/4040543/pexels-photo-4040543.jpeg?auto=compress&cs=tinysrgb&w=800&q=80',
-  case2: 'https://images.pexels.com/photos/4040553/pexels-photo-4040553.jpeg?auto=compress&cs=tinysrgb&w=800&q=80',
-  case3: 'https://images.pexels.com/photos/4040563/pexels-photo-4040563.jpeg?auto=compress&cs=tinysrgb&w=800&q=80',
+  // Skin Rejuvenation — smooth, radiant facial skin
+  case1: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
+  // Laser Resurfacing — facial treatment in progress
+  case2: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80',
+  // Facial Contouring — woman receiving aesthetic facial treatment
+  case3: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80',
 };
 
 export default function Gallery() {
