@@ -182,7 +182,7 @@ export default function Contact() {
               <div className="w-full h-48 rounded-sm border border-beige-200 bg-beige-100 flex items-center justify-center overflow-hidden">
                 <div className="text-center">
                   <MapPin className="w-8 h-8 text-gold-300 mx-auto mb-2" />
-                  <p className="font-sans text-xs text-stone-400 tracking-wide">luminaaesthetics.ro</p>
+                  <p className="font-sans text-xs text-stone-400 tracking-wide">luminaaesthetics.com</p>
                 </div>
               </div>
             </div>
