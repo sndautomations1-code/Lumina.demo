@@ -4,7 +4,6 @@ type Language = 'en' | 'ro';
 
 interface LanguageContextType {
   lang: Language;
-  toggle: () => void;
   t: (key: string) => string;
 }
 
@@ -246,11 +245,7 @@ const translations: Record<Language, Record<string, string>> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Language>('en');
-
-  const toggle = useCallback(() => {
-    setLang((prev) => (prev === 'en' ? 'ro' : 'en'));
-  }, []);
+  const [lang] = useState<Language>('en');
 
   const t = useCallback(
     (key: string) => translations[lang][key] ?? key,
@@ -258,7 +253,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <LanguageContext.Provider value={{ lang, toggle, t }}>
+    <LanguageContext.Provider value={{ lang, t }}>
       {children}
     </LanguageContext.Provider>
   );

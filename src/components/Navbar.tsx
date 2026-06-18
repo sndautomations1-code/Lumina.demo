@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 const navKeys = ['home', 'services', 'about', 'gallery', 'testimonials', 'contact'] as const;
 
 export default function Navbar() {
-  const { t, lang, toggle } = useLanguage();
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -58,16 +58,6 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-3 sm:gap-4">
-            {/* Language Toggle */}
-            <button
-              onClick={toggle}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-beige-300 hover:border-gold-400 transition-colors duration-300 text-xs font-sans font-medium tracking-wider text-stone-600 hover:text-gold-600"
-            >
-              <span className={lang === 'en' ? 'text-gold-600 font-semibold' : ''}>EN</span>
-              <span className="text-beige-400">/</span>
-              <span className={lang === 'ro' ? 'text-gold-600 font-semibold' : ''}>RO</span>
-            </button>
-
             {/* Book CTA */}
             <button
               onClick={() => scrollTo('contact')}
