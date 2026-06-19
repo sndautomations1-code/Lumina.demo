@@ -86,6 +86,11 @@
 }
 
 @layer utilities {
+  /* Keeps light nav links/logo legible while the bar is transparent over the hero image */
+  .nav-text-shadow {
+    text-shadow: 0 1px 4px rgba(28, 25, 23, 0.55);
+  }
+
   .animate-delay-100 {
     animation-delay: 100ms;
   }

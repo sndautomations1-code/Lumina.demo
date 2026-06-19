@@ -8,6 +8,7 @@ export default function Navbar() {
   const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('home');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -15,10 +16,51 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Scroll-spy: highlight the nav link for whichever section is in view.
+  useEffect(() => {
+    const sections = navKeys
+      .map((key) => document.getElementById(key))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActiveSection(visible[0].target.id);
+      },
+      // Thin band near the vertical middle of the viewport marks the active section.
+      { rootMargin: '-45% 0px -50% 0px', threshold: [0, 0.25, 0.5, 1] }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   const scrollTo = (id: string) => {
     setIsOpen(false);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Nav links adapt to the bar's background: dark "onyx" text on the light glass
+  // bar, light text + shadow while transparent over the hero. Gold marks hover/active.
+  const linkClass = (key: string) => {
+    const active = activeSection === key;
+    const base =
+      'font-sans text-sm font-medium tracking-wide transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-px after:transition-all after:duration-300';
+    if (scrolled) {
+      return `${base} after:bg-gold-500 ${
+        active
+          ? 'text-gold-600 after:w-full'
+          : 'text-stone-800 hover:text-gold-600 after:w-0 hover:after:w-full'
+      }`;
+    }
+    return `${base} nav-text-shadow after:bg-gold-300 ${
+      active
+        ? 'text-gold-300 after:w-full'
+        : 'text-white/90 hover:text-gold-300 after:w-0 hover:after:w-full'
+    }`;
   };
 
   return (
@@ -38,7 +80,11 @@ export default function Navbar() {
               className="w-7 h-7 text-gold-500 transition-transform duration-300 group-hover:rotate-12"
               strokeWidth={1.5}
             />
-            <span className="font-serif text-xl sm:text-2xl font-medium tracking-wider text-stone-800">
+            <span
+              className={`font-serif text-xl sm:text-2xl font-medium tracking-wider transition-colors duration-300 ${
+                scrolled ? 'text-stone-800' : 'text-white nav-text-shadow'
+              }`}
+            >
               Lumina
             </span>
           </button>
@@ -49,7 +95,8 @@ export default function Navbar() {
               <button
                 key={key}
                 onClick={() => scrollTo(key)}
-                className="font-sans text-sm font-medium tracking-wide text-stone-600 hover:text-gold-600 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-gold-400 hover:after:w-full after:transition-all after:duration-300"
+                aria-current={activeSection === key ? 'page' : undefined}
+                className={linkClass(key)}
               >
                 {t(`nav.${key}`)}
               </button>
@@ -69,7 +116,11 @@ export default function Navbar() {
             {/* Mobile menu toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-stone-600 hover:text-gold-600 transition-colors"
+              className={`lg:hidden p-2 transition-colors ${
+                scrolled
+                  ? 'text-stone-700 hover:text-gold-600'
+                  : 'text-white hover:text-gold-300 nav-text-shadow'
+              }`}
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -89,7 +140,12 @@ export default function Navbar() {
             <button
               key={key}
               onClick={() => scrollTo(key)}
-              className="block w-full text-left px-4 py-3 font-sans text-sm font-medium tracking-wide text-stone-600 hover:text-gold-600 hover:bg-beige-100/50 rounded-lg transition-all duration-200"
+              aria-current={activeSection === key ? 'page' : undefined}
+              className={`block w-full text-left px-4 py-3 font-sans text-sm font-medium tracking-wide rounded-lg transition-all duration-200 ${
+                activeSection === key
+                  ? 'text-gold-600 bg-beige-100/60'
+                  : 'text-stone-800 hover:text-gold-600 hover:bg-beige-100/50'
+              }`}
             >
               {t(`nav.${key}`)}
             </button>
