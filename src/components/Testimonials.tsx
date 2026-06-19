@@ -74,7 +74,7 @@ export default function Testimonials() {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center gap-8 sm:gap-12 mt-8">
             <button
               onClick={prev}
               className="p-2 rounded-full border border-beige-300 hover:border-gold-400 text-stone-400 hover:text-gold-600 transition-all duration-300"
