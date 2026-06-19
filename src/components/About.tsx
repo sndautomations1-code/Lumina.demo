@@ -39,8 +39,6 @@ export default function About() {
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Decorative corner */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border border-gold-300/30 rounded-sm hidden lg:block" />
           </div>
 
           {/* Text */}
