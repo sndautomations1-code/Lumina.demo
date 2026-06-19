@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const navKeys = ['home', 'services', 'about', 'gallery', 'testimonials', 'contact'] as const;
+const navKeys = ['home', 'services', 'about', 'process', 'testimonials', 'contact'] as const;
 
 export default function Navbar() {
   const { t } = useLanguage();
