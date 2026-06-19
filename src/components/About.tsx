@@ -40,7 +40,6 @@ export default function About() {
               />
             </div>
             {/* Decorative corner */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-gold-300/30 rounded-sm hidden lg:block" />
             <div className="absolute -top-4 -left-4 w-24 h-24 border border-gold-300/30 rounded-sm hidden lg:block" />
           </div>
 
