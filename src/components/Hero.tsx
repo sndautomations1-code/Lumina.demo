@@ -1,5 +1,6 @@
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import heroImage from '../assets/hero.png';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -9,12 +10,16 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/3757944/pexels-photo-3757944.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
-          alt="Luxury clinic"
-          className="w-full h-full object-cover"
+          src={heroImage}
+          alt="Lumina aesthetics facial treatment"
+          className="w-full h-full object-cover object-[center_30%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/60 via-stone-900/40 to-beige-50/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/30 via-transparent to-stone-900/20" />
+        {/* Warm tint — mutes the photo's cool blue and ties it to the brand palette */}
+        <div className="absolute inset-0 bg-gold-900/30 mix-blend-multiply" />
+        {/* Onyx vertical gradient for text contrast, fading into the cream page below */}
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/70 via-stone-900/45 to-beige-50/85" />
+        {/* Side shading — a touch stronger on the right to calm the bright window */}
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/30 via-transparent to-stone-900/40" />
       </div>
 
       {/* Decorative elements */}
