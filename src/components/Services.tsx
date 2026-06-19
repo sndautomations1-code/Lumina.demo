@@ -25,6 +25,16 @@ const serviceImages: Record<string, string> = {
   facial: facialImg,
 };
 
+// Per-image focal framing — keeps the face/treatment area visible, not cropped off.
+// fillers' subject sits at the top of the frame, so anchor it there.
+const serviceImagePositions: Record<string, string> = {
+  botox: 'object-center',
+  fillers: 'object-top',
+  meso: 'object-center',
+  laser: 'object-center',
+  facial: 'object-center',
+};
+
 export default function Services() {
   const { t } = useLanguage();
   const { ref, isVisible } = useInView();
@@ -54,11 +64,11 @@ export default function Services() {
               style={{ transitionDelay: isVisible ? `${i * 120}ms` : '0ms' }}
             >
               {/* Image */}
-              <div className="relative h-48 sm:h-52 overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={serviceImages[key]}
                   alt={t(`services.${key}.title`)}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                  className={`w-full h-full object-cover ${serviceImagePositions[key]} transition-transform duration-700 group-hover:scale-110`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 <span className="absolute top-4 left-4 text-gold-400 text-2xl opacity-80">
