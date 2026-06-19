@@ -59,7 +59,7 @@ export default function Hero() {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animate-delay-500">
         <button
           onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-          className="flex flex-col items-center gap-2 text-white/60 hover:text-gold-300 transition-colors duration-300"
+          className="flex flex-col items-center gap-2 text-white hover:text-gold-300 transition-colors duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
         >
           <span className="font-sans text-[10px] tracking-[0.3em] uppercase">{t('hero.scroll')}</span>
           <ChevronDown className="w-5 h-5 animate-bounce" />
