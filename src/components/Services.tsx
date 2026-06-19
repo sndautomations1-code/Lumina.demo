@@ -1,6 +1,11 @@
 import { Clock, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useInView } from '../hooks/useInView';
+import botoxImg from '../assets/botox.jpg';
+import fillersImg from '../assets/fillers.jpg';
+import mesoImg from '../assets/meso.jpg';
+import laserImg from '../assets/laser.jpg';
+import facialImg from '../assets/facial.jpg';
 
 const serviceKeys = ['botox', 'fillers', 'meso', 'laser', 'facial'] as const;
 
@@ -13,11 +18,11 @@ const serviceIcons: Record<string, string> = {
 };
 
 const serviceImages: Record<string, string> = {
-  botox: 'https://images.pexels.com/photos/7415932/pexels-photo-7415932.jpeg?auto=compress&cs=tinysrgb&w=600&q=80',
-  fillers: 'https://images.pexels.com/photos/6533326/pexels-photo-6533326.jpeg?auto=compress&cs=tinysrgb&w=600&q=80',
-  meso: 'https://images.pexels.com/photos/7201444/pexels-photo-7201444.jpeg?auto=compress&cs=tinysrgb&w=600&q=80',
-  laser: 'https://images.pexels.com/photos/6627465/pexels-photo-6627465.jpeg?auto=compress&cs=tinysrgb&w=600&q=80',
-  facial: 'https://images.pexels.com/photos/3997991/pexels-photo-3997991.jpeg?auto=compress&cs=tinysrgb&w=600&q=80',
+  botox: botoxImg,
+  fillers: fillersImg,
+  meso: mesoImg,
+  laser: laserImg,
+  facial: facialImg,
 };
 
 export default function Services() {
@@ -53,7 +58,7 @@ export default function Services() {
                 <img
                   src={serviceImages[key]}
                   alt={t(`services.${key}.title`)}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 <span className="absolute top-4 left-4 text-gold-400 text-2xl opacity-80">
