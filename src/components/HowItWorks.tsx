@@ -32,7 +32,7 @@ export default function HowItWorks() {
           {/* Connector rail — desktop only; the icon nodes sit on it and mask it */}
           <div
             aria-hidden="true"
-            className="hidden lg:block absolute top-20 left-[12%] right-[12%] h-px bg-gold-300/50"
+            className="hidden lg:block absolute top-28 left-[12%] right-[12%] h-px bg-gold-300/50"
           />
 
           {steps.map(({ key, num, Icon }, i) => (
@@ -46,13 +46,13 @@ export default function HowItWorks() {
               {/* Editorial number */}
               <span
                 aria-hidden="true"
-                className="font-serif text-5xl sm:text-6xl font-light leading-none text-[#BF6073]/50 select-none"
+                className="font-serif text-5xl sm:text-6xl font-light leading-none text-gold-400/70 select-none"
               >
                 {num}
               </span>
 
               {/* Icon node — thin onyx line in a gold hairline ring, cream fill masks the rail */}
-              <div className="relative z-10 -mt-3 mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-gold-300/60 bg-cream transition-colors duration-500 group-hover:border-[#BF6073]/60">
+              <div className="relative z-10 mt-5 mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-gold-300/60 bg-cream transition-colors duration-500 group-hover:border-[#BF6073]/60">
                 <Icon className="h-6 w-6 text-stone-700" strokeWidth={1.5} />
               </div>
 
