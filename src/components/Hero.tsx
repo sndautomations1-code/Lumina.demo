@@ -18,7 +18,6 @@ export default function Hero() {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-20 right-10 w-32 h-32 rounded-full border border-gold-300/20 animate-float hidden lg:block" />
       <div className="absolute bottom-32 left-10 w-20 h-20 rounded-full border border-gold-300/15 animate-float animate-delay-300 hidden lg:block" />
 
       {/* Content */}
