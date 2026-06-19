@@ -40,12 +40,16 @@ export default function Testimonials() {
         {/* Carousel */}
         <div className={`relative transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {/* Cards */}
-          <div className="relative min-h-[280px] sm:min-h-[240px]">
+          <div className="grid">
             {testimonialKeys.map((key, i) => (
               <div
                 key={key}
-                className={`absolute inset-0 transition-all duration-700 ${
-                  i === active ? 'opacity-100 translate-x-0' : i < active ? 'opacity-0 -translate-x-8' : 'opacity-0 translate-x-8'
+                className={`col-start-1 row-start-1 transition-all duration-700 ${
+                  i === active
+                    ? 'opacity-100 translate-x-0 pointer-events-auto'
+                    : i < active
+                    ? 'opacity-0 -translate-x-8 pointer-events-none'
+                    : 'opacity-0 translate-x-8 pointer-events-none'
                 }`}
               >
                 <div className="bg-ivory border border-beige-200 rounded-sm p-8 sm:p-10 luxury-shadow max-w-2xl mx-auto text-center">
