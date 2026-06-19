@@ -21,7 +21,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.slogan': 'Radiance Redefined',
     'hero.subtitle': 'Where artistry meets precision in aesthetic medicine',
-    'hero.cta': 'Book an Appointment',
+    'hero.cta': 'Explore Our Treatments',
     'hero.scroll': 'Discover More',
 
     // Services
@@ -135,7 +135,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.slogan': 'Frumusețe Redefinită',
     'hero.subtitle': 'Unde arta întâlnește precizia în medicina estetică',
-    'hero.cta': 'Programare Online',
+    'hero.cta': 'Explorează Tratamentele',
     'hero.scroll': 'Descoperă Mai Mult',
 
     // Services

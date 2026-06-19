@@ -52,7 +52,7 @@ export default function Hero() {
         {/* CTA */}
         <div className="animate-fade-in-up animate-delay-400">
           <a
-            href="#contact"
+            href="#services"
             className="inline-block px-8 sm:px-10 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-gold-300/40 hover:border-gold-300/70 text-white font-sans text-xs sm:text-sm font-medium tracking-[0.2em] uppercase transition-all duration-500 hover:shadow-lg hover:shadow-gold-300/10"
           >
             {t('hero.cta')}
