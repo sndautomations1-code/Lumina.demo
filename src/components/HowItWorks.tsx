@@ -3,10 +3,10 @@ import { useLanguage } from '../context/LanguageContext';
 import { useInView } from '../hooks/useInView';
 
 const steps = [
-  { key: 'step1', Icon: CalendarDays },
-  { key: 'step2', Icon: ClipboardList },
-  { key: 'step3', Icon: HandHeart },
-  { key: 'step4', Icon: Sparkles },
+  { key: 'step1', num: '01', Icon: CalendarDays },
+  { key: 'step2', num: '02', Icon: ClipboardList },
+  { key: 'step3', num: '03', Icon: HandHeart },
+  { key: 'step4', num: '04', Icon: Sparkles },
 ] as const;
 
 export default function HowItWorks() {
@@ -28,14 +28,14 @@ export default function HowItWorks() {
         </div>
 
         {/* Steps */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-          {/* Connecting line — desktop only, fades at the ends so it stays subtle */}
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-16">
+          {/* Connector rail — desktop only; the icon nodes sit on it and mask it */}
           <div
-            className="hidden lg:block absolute top-10 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-300/50 to-transparent"
             aria-hidden="true"
+            className="hidden lg:block absolute top-20 left-[12%] right-[12%] h-px bg-gold-300/50"
           />
 
-          {steps.map(({ key, Icon }, i) => (
+          {steps.map(({ key, num, Icon }, i) => (
             <div
               key={key}
               className={`group relative z-10 flex flex-col items-center text-center transition-all duration-700 ${
@@ -43,21 +43,23 @@ export default function HowItWorks() {
               }`}
               style={{ transitionDelay: isVisible ? `${i * 120}ms` : '0ms' }}
             >
-              {/* Icon badge */}
-              <div className="relative mb-6">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-to-br from-gold-100 to-[#BF6073]/15 ring-1 ring-gold-300/40 shadow-sm transition-all duration-500 group-hover:shadow-md group-hover:ring-gold-400/50">
-                  <Icon className="w-8 h-8 text-[#BF6073]" strokeWidth={1.5} />
-                </div>
-                {/* Step number */}
-                <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-stone-800 text-white font-sans text-xs font-medium flex items-center justify-center shadow-md">
-                  {i + 1}
-                </span>
+              {/* Editorial number */}
+              <span
+                aria-hidden="true"
+                className="font-serif text-5xl sm:text-6xl font-light leading-none text-[#BF6073]/50 select-none"
+              >
+                {num}
+              </span>
+
+              {/* Icon node — thin onyx line in a gold hairline ring, cream fill masks the rail */}
+              <div className="relative z-10 -mt-3 mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-gold-300/60 bg-cream transition-colors duration-500 group-hover:border-[#BF6073]/60">
+                <Icon className="h-6 w-6 text-stone-700" strokeWidth={1.5} />
               </div>
 
               <h3 className="font-serif text-xl sm:text-2xl font-medium text-stone-800 mb-3 tracking-wide">
                 {t(`howItWorks.${key}.title`)}
               </h3>
-              <p className="font-sans text-sm font-light leading-relaxed text-stone-500 max-w-xs mx-auto">
+              <p className="font-sans text-sm font-light leading-relaxed text-stone-500 max-w-[15rem] mx-auto">
                 {t(`howItWorks.${key}.desc`)}
               </p>
             </div>
