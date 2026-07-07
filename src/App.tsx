@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Contact />
         <Footer />
         <Banner />
+        <CookieConsent />
       </div>
       <SpeedInsights />
     </LanguageProvider>
